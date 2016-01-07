@@ -10,6 +10,12 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var mImageView: UIImageView!
+    @IBOutlet weak var mBtnCamera: UIButton!
+    @IBOutlet weak var mBtnPhototLibrary: UIButton!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -20,6 +26,12 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func OnTouchUpInsideBtnCamera(sender: UIButton) {
+    }
+    
+    
+    @IBAction func OnTouchUpInsideBtnPhotoLibrary(sender: UIButton) {
+    }
 
 }
 

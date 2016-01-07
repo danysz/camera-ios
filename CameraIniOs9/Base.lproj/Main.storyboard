@@ -21,13 +21,19 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lI5-x8-W3Z">
                                 <rect key="frame" x="20" y="28" width="560" height="552"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="stU-7d-slw">
-                                <rect key="frame" x="20" y="550" width="101" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="stU-7d-slw">
+                                <rect key="frame" x="20" y="550" width="54" height="30"/>
                                 <state key="normal" title="Camera"/>
+                                <connections>
+                                    <action selector="OnTouchUpInsideBtnCamera:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1s9-Ib-rfi"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hIR-uA-CsB">
-                                <rect key="frame" x="460" y="550" width="120" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hIR-uA-CsB">
+                                <rect key="frame" x="492" y="550" width="88" height="30"/>
                                 <state key="normal" title="Photo library"/>
+                                <connections>
+                                    <action selector="OnTouchUpInsideBtnPhotoLibrary:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZKB-K2-Gwy"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -49,6 +55,11 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="mBtnCamera" destination="stU-7d-slw" id="cRq-bf-e47"/>
+                        <outlet property="mBtnPhototLibrary" destination="hIR-uA-CsB" id="98D-Mw-e1r"/>
+                        <outlet property="mImageView" destination="lI5-x8-W3Z" id="lJS-BF-j2i"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
