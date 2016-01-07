@@ -14,7 +14,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var mBtnCamera: UIButton!
     @IBOutlet weak var mBtnPhototLibrary: UIButton!
     
-    
+    var chosenImage: UIImage!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,10 +28,42 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
 
     @IBAction func OnTouchUpInsideBtnCamera(sender: UIButton) {
+        doCameraOpen()
     }
     
     
     @IBAction func OnTouchUpInsideBtnPhotoLibrary(sender: UIButton) {
+        doPhotoLibraryOpen()
+    }
+    
+    func doCameraOpen(){
+        doGetImageFromSource(.Camera)
+    }
+    
+    func doPhotoLibraryOpen(){
+        doGetImageFromSource(.PhotoLibrary)
+    }
+    
+    func doGetImageFromSource(sourceType: UIImagePickerControllerSourceType){
+        let imagePicker = UIImagePickerController()
+        
+        imagePicker.delegate = self
+        imagePicker.sourceType = sourceType
+        
+        presentViewController(imagePicker, animated: true, completion: nil)
+        
+    }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        
+        chosenImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+        
+        mImageView.image = info[UIImagePickerControllerOriginalImage] as? UIImage
+        
+        print("reference url : ", info[UIImagePickerControllerReferenceURL])
+        print("media url : ", info[UIImagePickerControllerMediaURL])
+        dismissViewControllerAnimated( true, completion: nil)
+        
     }
 
 }
